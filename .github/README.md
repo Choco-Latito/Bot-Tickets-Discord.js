@@ -11,9 +11,6 @@ Este proyecto implementa un sistema de tickets para gestionar solicitudes y sopo
 ## Características
 
 - **Apertura de Tickets**: Los usuarios pueden abrir un ticket con un simple comando, lo que desencadena la creación de un canal privado exclusivo.
-- **Cierre de Tickets**: El bot permite a los usuarios y al personal cerrar tickets una vez que se haya resuelto el problema.
-- **Notificaciones**: Se envían notificaciones a un canal específico cuando se abre o cierra un ticket, manteniendo a todo el equipo informado.
-- **Gestión de Roles**: Posibilidad de asignar roles específicos para quienes pueden acceder a los canales de soporte.
 
 ## Requisitos
 
