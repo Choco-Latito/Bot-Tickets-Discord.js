@@ -25,7 +25,7 @@ Asegúrate de tener instalado lo siguiente:
 ## Instalación
 
 1. **Descarga el código fuente**:  
-   Descarga el archivo ZIP del repositorio desde GitHub [aquí](https://github.com/TuUsuario/Bot-Tickets-Discord.js) y extráelo en tu máquina.
+   Descarga el archivo ZIP del repositorio desde GitHub [aquí](https://github.com/Choco-Latito/Bot-Tickets-Discord.js) y extráelo en tu máquina.
 
 2. **Accede al directorio del proyecto**:  
    Abre una terminal (o símbolo del sistema en Windows) y navega al directorio donde extrajiste los archivos. Por ejemplo, si los extrajiste en la carpeta `Documentos`, el comando podría ser algo como:
