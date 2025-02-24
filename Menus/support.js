@@ -8,9 +8,6 @@ const {
   ChannelType, // Tipos de canales, como texto o voz
 } = require("discord.js");
 
-// Importando el modelo de conteo de tickets desde un archivo de esquema
-const TicketCount = require("../Schemas/ticketSchema"); // Cambia la ruta según la ubicación del modelo
-
 // Cargando las variables de entorno desde el archivo .env
 require("dotenv").config();
 
@@ -48,26 +45,9 @@ module.exports = {
     // Obtener el rol de staff de la guild usando la variable de entorno
     const staff = interaction.guild.roles.cache.get(process.env.STAFF_ID);
 
-    // Obtiene o crea el documento del conteo de tickets en la base de datos
-    let ticketCount = await TicketCount.findOne({
-      GuildId: interaction.guild.id, // Buscar por ID de la guild
-    });
-
-    // Si no existe, crea uno nuevo
-    if (!ticketCount) {
-      ticketCount = new TicketCount({
-        GuildId: interaction.guild.id,
-        TicketNumber: 0, // Inicializando el conteo de tickets en 0
-      });
-    }
-
-    // Incrementa el número de tickets
-    ticketCount.TicketNumber += 1; // Aumentar el contador de tickets en uno
-    await ticketCount.save(); // Guarda el conteo actualizado en la base de datos
-
     // Crea el canal del ticket con el nuevo número asignado
     const canal = await interaction.guild.channels.create({
-      name: `ticket-${ticketCount.TicketNumber}`, // Nombre del canal incluye el número de ticket
+      name: `ticket-${user.interaction.user.username}`, // Nombre del canal del ticket
       type: ChannelType.GuildText, // Tipo de canal: texto
       parent: process.env.CATEGORY_ID, // Establecer la categoría del canal usando la variable de entorno
       topic: interaction.user.id, // Asigna el ID del usuario como tema del canal
